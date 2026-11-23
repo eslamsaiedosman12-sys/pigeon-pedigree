@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#14213d">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="style.css">
+<title>سلالة الحمام | Pigeon Pedigree</title>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#/"><img src="icon.svg" alt="" width="34" height="34"><span>سلالة الحمام</span></a>
+  <nav id="nav">
+    <a href="#/" data-r="">الرئيسية</a>
+    <a href="#/pigeons" data-r="pigeons">الحمام</a>
+    <a href="#/new" data-r="new">إضافة</a>
+    <a href="#/backup" data-r="backup">النسخ الاحتياطي</a>
+  </nav>
+</header>
+<main id="app" class="wrap"></main>
+<dialog id="dlg"><form method="dialog"><p id="dlgMsg"></p><div class="row"><button value="ok" class="btn danger">تأكيد</button><button value="no" class="btn ghost">إلغاء</button></div></form></dialog>
+<div id="toast" role="status"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

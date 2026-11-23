@@ -1,0 +1,36 @@
+:root{--navy:#14213d;--navy2:#1f3260;--gold:#b8963e;--bg:#f4f5f7;--line:#dde0e6;--mut:#6b7280;--red:#b3261e;--ok:#1f7a4d}
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;background:var(--bg);color:#1b1f2a;line-height:1.7}
+a{color:var(--navy2);text-decoration:none}
+.top{background:var(--navy);display:flex;align-items:center;justify-content:space-between;padding:.5rem 1rem;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:.6rem;color:#fff;font-weight:700;font-size:1.15rem}
+#nav{display:flex;gap:.25rem}#nav a{color:#cfd6e6;padding:.35rem .8rem;border-radius:8px}#nav a.on{background:var(--gold);color:#fff}
+.wrap{max-width:1000px;margin:0 auto;padding:1rem 1rem 5rem}
+h1{color:var(--navy);font-size:1.5rem;margin:.5rem 0 1rem}h1::after{content:"";display:block;width:48px;height:3px;background:var(--gold);margin-top:.3rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem;margin-bottom:1rem}
+.grid{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.stat{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:12px;padding:.8rem;text-align:center}
+.stat b{display:block;font-size:1.8rem;color:var(--navy)}.stat span{color:var(--mut);font-size:.9rem}
+.btn{display:inline-block;background:var(--navy);color:#fff;border:0;border-radius:8px;padding:.55rem 1.1rem;font:inherit;cursor:pointer}
+.btn:hover{background:var(--navy2)}.btn.gold{background:var(--gold)}.btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--line)}.btn.danger{background:var(--red)}
+.row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center}
+label{display:block;font-weight:600;margin:.7rem 0 .2rem;color:var(--navy)}
+input,select,textarea{width:100%;font:inherit;padding:.5rem .7rem;border:1px solid var(--line);border-radius:8px;background:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.err{color:var(--red);font-size:.88rem;min-height:1.1em}.bad{border-color:var(--red)}
+.cols{display:grid;gap:0 1rem;grid-template-columns:1fr 1fr}@media(max-width:640px){.cols{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:.55rem .6rem;text-align:right;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff}tr.lnk{cursor:pointer}tr.lnk:hover{background:#f3efe2}
+.thumb{width:44px;height:44px;border-radius:50%;object-fit:cover;background:#e5e7eb;border:2px solid var(--gold);display:block}
+.ph{width:100%;max-width:260px;aspect-ratio:1;object-fit:cover;border-radius:12px;border:3px solid var(--gold);background:#e5e7eb}
+.tag{display:inline-block;padding:0 .6rem;border-radius:99px;font-size:.85rem;background:#e9ecf3;color:var(--navy)}.tag.w{background:#f7edd0;color:#7a5d12}
+.empty{text-align:center;padding:2.5rem 1rem;color:var(--mut)}.empty h2{color:var(--navy)}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:.3rem 1rem;margin:0}dt{color:var(--mut)}dd{margin:0}
+dialog{border:0;border-radius:12px;padding:1.2rem;max-width:90vw;box-shadow:0 10px 40px #0005}dialog::backdrop{background:#14213d99}
+#toast{position:fixed;bottom:1rem;inset-inline:0;margin:auto;width:max-content;max-width:90vw;background:var(--navy);color:#fff;padding:.6rem 1.2rem;border-radius:8px;border-inline-start:4px solid var(--gold);opacity:0;pointer-events:none;transition:.3s}#toast.show{opacity:1}
+@media(max-width:640px){.top{flex-direction:column;gap:.3rem}#nav a{padding:.3rem .5rem;font-size:.9rem}th:nth-child(n+4),td:nth-child(n+4){display:none}}
+.tree{width:100%;height:68vh;min-height:360px;background:#fff;border:1px solid var(--line);border-radius:12px;touch-action:none;cursor:grab;display:block}
+.tree path{fill:none;stroke:#aab1c0;stroke-width:1.5}
+.nd{cursor:pointer}.nd rect{fill:#fff;stroke:var(--navy);stroke-width:2}.nd.F rect{stroke:var(--gold)}
+.nd.root rect{fill:var(--navy)}.nd.root text{fill:#fff}.nd.ghost{cursor:default}.nd.ghost rect{stroke:#aab1c0;stroke-dasharray:5 4;fill:#f9fafb}
+.tree text{font-family:inherit;font-size:13px;fill:var(--navy);text-anchor:middle;pointer-events:none}.tree .sub{font-size:11px;fill:#6b7280}.nd.root .sub{fill:#d7dcea}
+.note{background:#f7edd0;border:1px solid var(--gold);border-radius:10px;padding:.6rem 1rem;margin-bottom:1rem}
