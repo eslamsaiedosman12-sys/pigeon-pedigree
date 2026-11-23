@@ -34,3 +34,7 @@ dialog{border:0;border-radius:12px;padding:1.2rem;max-width:90vw;box-shadow:0 10
 .nd.root rect{fill:var(--navy)}.nd.root text{fill:#fff}.nd.ghost{cursor:default}.nd.ghost rect{stroke:#aab1c0;stroke-dasharray:5 4;fill:#f9fafb}
 .tree text{font-family:inherit;font-size:13px;fill:var(--navy);text-anchor:middle;pointer-events:none}.tree .sub{font-size:11px;fill:#6b7280}.nd.root .sub{fill:#d7dcea}
 .note{background:#f7edd0;border:1px solid var(--gold);border-radius:10px;padding:.6rem 1rem;margin-bottom:1rem}
+.dev{max-width:1000px;margin:0 auto;padding:1.2rem 1rem 6rem;text-align:center;font-size:1.15rem;font-weight:700;color:var(--navy);line-height:2;border-top:2px solid var(--gold)}
+.dev a{color:var(--navy);font-size:1.3rem;text-decoration:underline}
+.pshow{display:none}
+@media print{.top,.dev,.row,.hint,#toast{display:none!important}.pshow{display:block;text-align:center;font-weight:700;margin:.5rem 0}.tree{height:auto;border:0}}

@@ -1,4 +1,4 @@
-/* IndexedDB layer. Stores: pigeons(id PK, unique index ring, fatherId, motherId), photos(id PK, blob).
+/* IndexedDB layer. Stores: pigeons(id PK, unique index ring, fatherId, motherId), photos (legacy, unused).
    pigeon = {id, ring, name, sex:'M'|'F', birth, color, breed, notes, fatherId, motherId,
              fatherRing, motherRing (pending, unregistered parent), photoId, createdAt, updatedAt} */
 let _db;
@@ -16,13 +16,11 @@ export const get=async(n,id)=>req((await store(n)).get(id));
 
 /** Save pigeon (+ optional new photo blob, optional photo id to delete) atomically.
  *  After saving, any pigeon waiting on this ring as an unregistered parent is linked automatically. */
-export async function savePigeon(p,{photo,deletePhotoId}={}){
+export async function savePigeon(p){
   const d=await open(),t=d.transaction(['pigeons','photos'],'readwrite'),ps=t.objectStore('pigeons'),ph=t.objectStore('photos');
   return new Promise((res,rej)=>{
     t.oncomplete=()=>res(p);
     t.onabort=()=>rej(t.error);
-    if(deletePhotoId)ph.delete(deletePhotoId);
-    if(photo)ph.put({id:p.photoId,blob:photo});
     ps.put(p).onsuccess=()=>ps.getAll().onsuccess=e=>{
       for(const c of e.target.result){if(c.id===p.id)continue;let ch=false;
         if(!c.fatherId&&c.fatherRing===p.ring){c.fatherId=p.id;c.fatherRing=null;ch=true}
